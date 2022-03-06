@@ -80,7 +80,7 @@ enum {
 typedef void (*notifier) (RECOVERY_STATUS status, int error, int level, const char *msg);
 
 void notify(RECOVERY_STATUS status, int error, int level, const char *msg);
-void notify_init(void);
+void notify_init(bool console_enable);
 void notifier_set_color(int level, char *col);
 #define swupdate_notify(status, format, level, arg...) do { \
 	if (loglevel >= level) { \

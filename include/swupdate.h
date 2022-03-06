@@ -145,6 +145,7 @@ struct swupdate_cfg {
 	char mtdblacklist[SWUPDATE_GENERAL_STRING_SIZE];
 	char forced_signer_name[SWUPDATE_GENERAL_STRING_SIZE];
 	bool syslog_enabled;
+	bool console_enable;
 	bool no_downgrading;
 	bool no_reinstalling;
 	bool no_transaction_marker;

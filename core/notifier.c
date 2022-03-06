@@ -471,7 +471,7 @@ static void *notifier_thread (void __attribute__ ((__unused__)) *data)
 	} while(1);
 }
 
-void notify_init(void)
+void notify_init(bool console_enable)
 {
 
 #ifdef CONFIG_SYSTEMD
@@ -530,7 +530,11 @@ void notify_init(void)
 		addr_init(&notify_server, "NotifyServer");
 		STAILQ_INIT(&clients);
 		pthread_mutex_init(&clients_mutex, NULL);
-		register_notifier(console_notifier);
+
+		if(console_enable){
+			register_notifier(console_notifier);
+		}
+		
 		register_notifier(process_notifier);
 		register_notifier(progress_notifier);
 		start_thread(notifier_thread, NULL);

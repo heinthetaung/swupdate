@@ -13,7 +13,7 @@
 
 extern int pid;
 extern int sw_sockfd;
-
+extern bool console_enable;
 /*
  * This is used by the core process
  * to monitor all derived processes

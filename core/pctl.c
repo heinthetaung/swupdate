@@ -173,7 +173,7 @@ static int spawn_process(struct swupdate_task *task,
 	/* Save new pid */
 	pid = getpid();
 
-	notify_init();
+	notify_init(console_enable);
 
 #if defined(__linux__)
 	if (signal(SIGUSR1, parent_dead_handler) == SIG_ERR) {
